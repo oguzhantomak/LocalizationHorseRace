@@ -22,7 +22,7 @@ namespace AtYarisi
         {
 
             timer1.Start();
-            
+
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -31,19 +31,42 @@ namespace AtYarisi
             pb2.Left += rnd.Next(1, 20);
             pb3.Left += rnd.Next(1, 20);
 
-            if (pb1.Right>=pbFinish.Left)
+            if (pb1.Left>pb2.Left && pb1.Left>pb3.Left)
             {
+                lblSiralama.Text = "Şahbatur Önde";
+            }
+            else if (pb2.Left>pb1.Left && pb2.Left>pb3.Left)
+            {
+                lblSiralama.Text = "Gülbatur önde";
+            }
+            else if (pb3.Left>pb1.Left && pb3.Left>pb2.Left)
+            {
+                lblSiralama.Text="Canbatur önde";
+            }
+
+            if (pb1.Right >= pbFinish.Left)
+            {
+                timer1.Stop();
                 MessageBox.Show("1.At Kazandı");
             }
-            else if (pb2.Right>=pbFinish.Left)
+            else if (pb2.Right >= pbFinish.Left)
             {
+                timer1.Stop();
                 MessageBox.Show("2.At Kazandı");
             }
-            else if (pb3.Right>=pbFinish.Left)
+            else if (pb3.Right >= pbFinish.Left)
             {
+                timer1.Stop();
                 MessageBox.Show("3. At Kazandı");
             }
-            
+
+        }
+
+        private void btnSfirla_Click(object sender, EventArgs e)
+        {
+            pb1.Left = 0;
+            pb2.Left = 0;
+            pb3.Left = 0;
         }
     }
 }

@@ -38,6 +38,8 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.pbFinish = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSfirla = new System.Windows.Forms.Button();
+            this.lblSiralama = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
@@ -117,13 +119,36 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // btnSfirla
+            // 
+            this.btnSfirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSfirla.ForeColor = System.Drawing.Color.White;
+            this.btnSfirla.Location = new System.Drawing.Point(693, 439);
+            this.btnSfirla.Name = "btnSfirla";
+            this.btnSfirla.Size = new System.Drawing.Size(75, 23);
+            this.btnSfirla.TabIndex = 2;
+            this.btnSfirla.Text = "Yarışı Sıfırla";
+            this.btnSfirla.UseVisualStyleBackColor = true;
+            this.btnSfirla.Click += new System.EventHandler(this.btnSfirla_Click);
+            // 
+            // lblSiralama
+            // 
+            this.lblSiralama.AutoSize = true;
+            this.lblSiralama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSiralama.Location = new System.Drawing.Point(370, 445);
+            this.lblSiralama.Name = "lblSiralama";
+            this.lblSiralama.Size = new System.Drawing.Size(0, 20);
+            this.lblSiralama.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(927, 474);
+            this.Controls.Add(this.lblSiralama);
             this.Controls.Add(this.pbFinish);
+            this.Controls.Add(this.btnSfirla);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pb3);
             this.Controls.Add(this.pb2);
@@ -137,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFinish)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,6 +176,8 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox pbFinish;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnSfirla;
+        private System.Windows.Forms.Label lblSiralama;
     }
 }
 
