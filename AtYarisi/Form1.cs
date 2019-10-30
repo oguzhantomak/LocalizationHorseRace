@@ -31,15 +31,15 @@ namespace AtYarisi
             pb2.Left += rnd.Next(1, 20);
             pb3.Left += rnd.Next(1, 20);
 
-            if (pb1.Left>pb2.Left && pb1.Left>pb3.Left)
+            if (pb1.Right>pb2.Right && pb1.Right>pb3.Right)
             {
                 lblSiralama.Text = "Şahbatur Önde";
             }
-            else if (pb2.Left>pb1.Left && pb2.Left>pb3.Left)
+            else if (pb2.Right>pb1.Right && pb2.Right>pb3.Right)
             {
                 lblSiralama.Text = "Gülbatur önde";
             }
-            else if (pb3.Left>pb1.Left && pb3.Left>pb2.Left)
+            else if (pb3.Right>pb1.Right && pb3.Right > pb2.Right)
             {
                 lblSiralama.Text="Canbatur önde";
             }
@@ -47,26 +47,28 @@ namespace AtYarisi
             if (pb1.Right >= pbFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("1.At Kazandı");
+                MessageBox.Show("Şahbatur Kazandı");
             }
             else if (pb2.Right >= pbFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("2.At Kazandı");
+                MessageBox.Show("Gülbatur Kazandı");
             }
             else if (pb3.Right >= pbFinish.Left)
             {
                 timer1.Stop();
-                MessageBox.Show("3. At Kazandı");
+                MessageBox.Show("Canbatur Kazandı");
             }
 
         }
 
         private void btnSfirla_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             pb1.Left = 0;
             pb2.Left = 0;
             pb3.Left = 0;
+            lblSiralama.Text = "";
         }
     }
 }
